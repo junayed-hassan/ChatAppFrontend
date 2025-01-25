@@ -15,7 +15,6 @@ function App() {
 
   useEffect(() => {
     checkAuth();
-
   }, [checkAuth]);
 
   console.log({ authUser });
@@ -28,7 +27,7 @@ function App() {
   
 
   return (
-    <>
+    <div data-theme="dark">
       <Navbar />
       <Routes>
         <Route path="/" element={authUser ? <HomePage /> : <Navigate to="/login" />} />
@@ -38,8 +37,8 @@ function App() {
         <Route path="/profile" element={authUser ? <ProfilePage /> : <Navigate to="/login" />} />
       </Routes>
       <Toaster />
-    </>
+    </div>
   )
-}
+};
 
 export default App;
